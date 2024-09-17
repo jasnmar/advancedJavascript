@@ -6,10 +6,6 @@ const favouriteFilm = {
   director: "Tony Scott"
 } 
 
-const title = favouriteFilm.title
-const year = favouriteFilm.year
-const genre = favouriteFilm.genre
-const star = favouriteFilm.star
-const director = favouriteFilm.director
+const { title, year, genre, star, director } = favouriteFilm
 
 console.log(`My favourite film is ${title} starring ${star}. It's an ${genre} film that was directed by ${director} and released in ${year}.`)
