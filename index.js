@@ -1,4 +1,4 @@
-const playerGuess = 3
+const playerGuess = 8
 const correctAnswer = 6
 
 /*
@@ -8,6 +8,8 @@ Challenge
    too low, or exactly right.
 */
 
-const message = playerGuess === correctAnswer ? 'Correct!' : 'Wrong!'
+const message = playerGuess === correctAnswer ? 'Correct!' 
+  : playerGuess > correctAnswer ? 'Too High!' 
+  : 'Too Low'
 
 console.log(message)
