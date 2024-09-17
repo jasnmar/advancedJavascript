@@ -1,13 +1,16 @@
-function logAnswer(answer, points) {
-  console.log(`The answer is ${answer} of course! If you got that right, giver yourself ${points} points.`)
-}
-
-console.log('What is the capital of Peru?')
+function startCountdown() {
+  let secondsRemaining = 3
+  
+  const shutdownTimer = setInterval()
 /*
 Challenge:
-  1. After a 3 second delay, call the 'logAnswer' function.
-  2. Make sure 'logAnswer' has all the info it needs. 
-     The answer is 'Lima' and it's 10 points for getting it right. 
+1. Every 1000 milliseconds, log out: 
+  `Your device will shut down in ${secondsRemaining} seconds`.
+  Decrement 'secondsRemaining'.
+2. When 'secondsRemaining' hits zero, you should log out 
+  `Your device is shutting down`. 
+  At this point, the setInterval should be cleared. What method 
+  can you use to do that? (We used clearTimeout to cancel setTimeout.)
 */
-
-setTimeout(logAnswer, 3000, 'lima', 10)
+}
+startCountdown()
