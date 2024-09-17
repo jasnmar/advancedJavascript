@@ -1,10 +1,10 @@
-function startCountdown() {
+function startCountdown(device) {
   let secondsRemaining = 3
   
   const shutdownTimer = setInterval(function(){
-    let message =  `Your device will shut down in ${secondsRemaining} seconds.` 
+    let message =  `Your ${device} will shut down in ${secondsRemaining} seconds.` 
     if (secondsRemaining === 0){
-      message = `Your device is shutting down`
+      message = `Your ${device} is shutting down`
       clearInterval(shutdownTimer)
     } 
     console.log(message)
@@ -21,4 +21,4 @@ Challenge:
   can you use to do that? (We used clearTimeout to cancel setTimeout.)
 */
 }
-startCountdown()
+startCountdown('Macbook')
