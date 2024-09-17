@@ -1,3 +1,5 @@
+
+
 /*
 App requirements:
  - The app should display the name, symbol, and 
@@ -22,11 +24,33 @@ Challenge:
    fakeStockAPI.js.
 */
 
+
+import getStockData from "./fakeStockAPI.js"
+const stockData=getStockData()
+console.log(stockData)
+let prevPrice = 0
+
 function renderStockTicker(stockData) {
+  stockData.arrow = stockData.price > prevPrice ? '\u2BC5' : stockData.price < prevPrice ? '\u2BC6' : '\u2BC8'
+
+  prevPrice = stockData.price
   const stockDisplayName = document.getElementById('name')
   const stockDisplaySymbol = document.getElementById('symbol')
   const stockDisplayPrice = document.getElementById('price')
   const stockDisplayPriceIcon = document.getElementById('price-icon')
   const stockDisplayTime = document.getElementById('time')
+  stockDisplayName.textContent = stockData.name
+  stockDisplaySymbol.innerHTML = stockData.sym
+  stockDisplayPriceIcon.textContent = stockData.arrow
+  stockDisplayPrice.textContent = stockData.price
+  stockDisplayTime.textContent = stockData.time
 }
+const currentStockData = setInterval(() => {
+  
+  const data = getStockData()
+  console.log(data)
+  renderStockTicker(data)
+}, 1500);
+
+renderStockTicker(stockData)
 

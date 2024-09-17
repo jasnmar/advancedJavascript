@@ -1,8 +1,12 @@
 function getStockData() {
+  const newTime = new Date()
+  const timeString = newTime.toLocaleTimeString()
+  const price = Math.floor(Math.random() * 300) / 100
   return {
       name: 'QtechAI',
       sym: 'QTA',
-      price: /* return a random number between 0 and 3 to two decimal places */, 
-      time: /* return a timestamp in this format: hh/mm/ss */
+      price: price, 
+      time: timeString
   }
 }
+export default getStockData
