@@ -1,3 +1,4 @@
-import { interplanetaryDestinationsArr as destinations, shortSpaceTripsArr } from '/data.js'
+import { interplanetaryDestinationsArr, shortSpaceTripsArr } from '/data.js'
+import getMatchingTripsArr from './searchFunction.js'
 
-console.log(shortSpaceTripsArr)
+console.log(getMatchingTripsArr(interplanetaryDestinationsArr, 'exotic'))
