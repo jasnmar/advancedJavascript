@@ -11,6 +11,8 @@ const exerciseTimeMins = 70
 // else {
 //     message = 'Excellent!'
 // }
-const message = exerciseTimeMins < 30 ? 'You need to try harder!' : exerciseTimeMins < 60 ? 'Doing good!' : 'Excellent'
+const message = exerciseTimeMins < 30 ? 'You need to try harder!' 
+  : exerciseTimeMins < 60 ? 'Doing good!' 
+  : 'Excellent'
 
 console.log(message)
