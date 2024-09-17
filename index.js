@@ -5,6 +5,6 @@ Challenge:
 */
 
 
-const tomsBankBalanceGBP = 9_007_199_254_740_991
+const tomsBankBalanceGBP = 9_007_199_254_740_991_345n
 
 console.log(tomsBankBalanceGBP)
