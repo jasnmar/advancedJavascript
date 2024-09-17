@@ -1,4 +1,9 @@
-import { interplanetaryDestinationsArr, shortSpaceTripsArr } from '/data.js'
-import getMatchingTripsArr from './searchFunction.js'
+const dateSnapshot = new Date()
+console.log(dateSnapshot)
 
-console.log(getMatchingTripsArr(interplanetaryDestinationsArr, 'exotic'))
+/*
+Challenge:
+    1. Search online to find out how we can get just the year
+       using the Date() constructor. Then update the code in 
+       the console.log.
+*/
