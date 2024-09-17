@@ -1,7 +1,15 @@
 function startCountdown() {
   let secondsRemaining = 3
   
-  const shutdownTimer = setInterval()
+  const shutdownTimer = setInterval(function(){
+    let message =  `Your device will shut down in ${secondsRemaining} seconds.` 
+    if (secondsRemaining === 0){
+      message = `Your device is shutting down`
+      clearInterval(shutdownTimer)
+    } 
+    console.log(message)
+    secondsRemaining--
+  }, 1000)
 /*
 Challenge:
 1. Every 1000 milliseconds, log out: 
