@@ -27,6 +27,8 @@ Challenge:
       case 'lemon cake':
         price = 3
         break
+      default:
+        return `Sorry we dont sell ${item}`
   }
   return `You selected ${item}. That will be $${price}`
 }
