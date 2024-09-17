@@ -6,7 +6,7 @@ Challenge:
     1. Move the increment operator to the front 
        of the expression.
 */
-  return currentTicketNumber++
+  return ++currentTicketNumber
 }
 
 // Simulating guests arriving and receiving ticket numbers
