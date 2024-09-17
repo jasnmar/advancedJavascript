@@ -1,9 +1,9 @@
-const dateSnapshot = new Date()
-console.log(dateSnapshot.getFullYear())
+function checkUsername(userName) {
+  if (userName) {
+      console.log(userName)
+  } else {
+      throw new Error('No username provid')
+  }
+}
 
-/*
-Challenge:
-    1. Search online to find out how we can get just the year
-       using the Date() constructor. Then update the code in 
-       the console.log.
-*/
+checkUsername()
