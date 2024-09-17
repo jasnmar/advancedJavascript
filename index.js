@@ -1,15 +1,25 @@
-const playerGuess = 8
-const correctAnswer = 6
-
-/*
-Challenge
-1. Now improve the functionality of this code by 
-   letting the player know if their guess was too high, 
-   too low, or exactly right.
+/**
+ * Price List
+ * Coffee $2
+ * Sandwiches $5
+ * Salad $4
+ * Lemon Cake $3
 */
 
-const message = playerGuess === correctAnswer ? 'Correct!' 
-  : playerGuess > correctAnswer ? 'Too High!' 
-  : 'Too Low'
+// For example: "You selected Salad. That will be $4"
 
-console.log(message)
+function selectItem(item) {
+  let price = 0
+/*
+Challenge:
+1.  Add the remaining price list items as cases.
+*/    
+  switch(item) {
+      case 'coffee':
+          price = 2
+          break    
+  }
+  return `You selected ${item}. That will be $${price}`
+}
+
+console.log(selectItem('biscuits'))
