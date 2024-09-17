@@ -1,15 +1,10 @@
-let currentTicketNumber = 0
-
-function getNextTicketNumber() {
 /*
 Challenge:
-    1. Move the increment operator to the front 
-       of the expression.
+1. Use numeric separators (_) to separate out 
+   the digits into chunks of 3 so they are easier to read. 
 */
-  return ++currentTicketNumber
-}
 
-// Simulating guests arriving and receiving ticket numbers
-console.log(`Guest 1, your ticket number is: ${getNextTicketNumber()}`) 
-console.log(`Guest 2, your ticket number is: ${getNextTicketNumber()}`) 
-console.log(`Guest 3, your ticket number is: ${getNextTicketNumber()}`)
+
+const tomsBankBalanceGBP = 9007199254740991
+
+console.log(tomsBankBalanceGBP)
