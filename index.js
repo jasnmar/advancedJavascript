@@ -1,18 +1,17 @@
-const exerciseTimeMins = 70
+const playerGuess = 3
+const correctAnswer = 6
 
-// let message = ''
+/*
+Challenge 
+1. Refactor the if else statement to use a ternary operator.
+*/
 
-// if (exerciseTimeMins < 30) {
-//     message = 'You need to try harder!'
-// }
-// else if(exerciseTimeMins < 60) {
-//     message = 'Doing good!'
-// }
-// else {
-//     message = 'Excellent!'
-// }
-const message = exerciseTimeMins < 30 ? 'You need to try harder!' 
-  : exerciseTimeMins < 60 ? 'Doing good!' 
-  : 'Excellent'
+let message = ''
+if (playerGuess === correctAnswer) {
+    message = 'Correct!'
+}
+else {
+    message = 'Wrong!'
+}
 
 console.log(message)
