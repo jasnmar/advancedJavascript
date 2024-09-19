@@ -1,48 +1,34 @@
-const series = [
+const characters = [
   {
-      name: 'The Wire',
-      location: 'Baltimore',
-      lengthInHours : 60,
-      genres: ['action', 'thriller', 'detective', 'suspense']
+      title: 'Ninja',
+      emoji: '🥷',
+      powers: ['agility', 'stealth', 'aggression'],
   },
   {
-      name: 'Game of Thromes',
-      location: 'Westeros and Essos',
-      lengthInHours : 70.25,
-      genres: ['fantasy', 'action', 'tragedy']
+      title: 'Sorcerer',
+      emoji: '🧙',
+      powers: ['magic', 'invisibility', 'necromancy'],
   },
   {
-      name: 'Friends',
-      location: 'New York',
-      lengthInHours : 85,
-      genres: ['comedy', 'romance', 'drama']
+      title: 'Ogre',
+      emoji: '👹',
+      powers: ['power', 'stamina', 'shapeshifting'],
   },
   {
-      name: 'The Walking Dead',
-      location: 'Atlanta',
-      lengthInHours : 131,
-      genres: ['zombie', 'apocalypse', 'thriller', 'suspense']
-  },
-  {
-      name: 'The Big Bang Theory',
-      location: 'Pasadena',
-      lengthInHours : 139.66,
-      genres: ['comedy', 'nerd', 'romance']
-  },
+      title: 'Unicorn',
+      emoji: '🦄',
+      powers: [ 'flight', 'power', 'purity'],
+  }
 ]
 
-const newYorkSeries = series.filter(function(show){
-  return show.location === 'New York'
-})
-
-console.log(newYorkSeries)
-
+for (let character of characters){
+  console.log(character.powers)
 /*
 Challenge:
-1. Use the .filter() method to create an array
- of all of the thrillers.
+1. Nest a for of inside this for of to iterate over 
+ the powers array for each character. Log out each 
+ power.
 */
+}
 
-const thrillers = series.filter((show) => show.genres.includes('thriller'))
 
-console.log(thrillers)
