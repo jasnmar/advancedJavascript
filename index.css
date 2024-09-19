@@ -1,58 +1,71 @@
-html, body, *{
-  box-sizing: border-box;
-  font-family: 'Karla', sans-serif
+html, body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1{
-  text-align: center;
+main {
+  width: 250px;
+  border: 1px solid;
+  margin: 2em auto;
+  padding: 1.5em;
+  min-height: 400px;
+  background-color: #282828;
+  border-radius: 6px;
 }
 
-.container{
+label {
+  display: block;
+  margin-bottom: .5em;
+  font-size: 110%;
+}
+
+.input-area {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 200px;
-  margin: 0 auto;
-}
-
-.list-item, input[type="text"]{
-  border-radius: 5px;
-}
-
-.list-item{
-  border: 2px solid skyblue;
-  min-width: 100%;
-  padding: 8px 13px;
-  background-color: whitesmoke;
-  font-weight: bold;
-  margin-bottom: 2px;
-}
-
-ul{
-  list-style: none;
-  padding-left: 0
-  
+  justify-content: center;
+  margin-bottom: .8em;
 }
 
 input[type="text"]{
   width: 100%;
-  padding: 10px 15px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border: none;
+  padding: .4em;
 }
 
-label{
-  font-size: 18px;
-  margin-bottom: -20px;
-  margin-left: 10px;
-  padding-left: 3px;
-  z-index: 1000;
-  background-color: white;
-  width: 43px 
+button {
+  border: none;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: deeppink;
+  color: white;
+  padding: .5em;
+  letter-spacing: .05em;
 }
 
+hr {
+  border: 1px solid deeppink;
+}
 
-button{
-  width: 60%;
-  margin: 0 auto;
-  padding: 10px 17px;
-  cursor: pointer;
+.contact-display {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.contact-card {
+  background-color: whitesmoke;
+  color: #222;
+  padding: 1em;
+  border-radius: 6px;
+}
+
+p {
+  margin: 0 0 .8em 0;
+}
+
+p:last-child {
+  margin-bottom: 0px;  
 }
