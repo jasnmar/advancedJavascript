@@ -1,10 +1,9 @@
-const sentence = "i went to Australia and i saw a shark"
+const paragraph = "javaScript is the backbone of the internet. it was created in 1995. before JS, websites were so boring"
 
-
-const nsent = sentence.replaceAll("i ", "I ")
-
-console.log(nsent)
 /*
 Challenge:
-    1. Change the lowercase i’s to uppercase.
+    1. Use replaceAll and regex to ensure the first 
+       character of each sentence is uppercase.
+       You will need to use a string method which converts 
+       characters to uppercase.
 */
