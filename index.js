@@ -42,3 +42,10 @@ Challenge:
 1. Use the .filter() method to create an array
  of all of the thrillers.
 */
+
+const thrillers = series.filter((show) => {
+  if(show.genres.filter((genre) => genre==='thriller').length>0)
+    return true
+})
+
+console.log(thrillers)
