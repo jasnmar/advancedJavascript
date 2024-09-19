@@ -1,70 +1,58 @@
-body {
-  background-color: #000000;
-  margin: 0;
-  color: white;
-  font-size: 16px;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
-
-.card {
-  display: flex;
-  justify-content: space-between;
-  background: #000000;
-  width: 100%; 
-  max-width: 300px;
-  padding: 0 11px;
+html, body, *{
   box-sizing: border-box;
-  transition: box-shadow 0.3s ease;
-  margin: 0 20px 5px 20px;
+  font-family: 'Karla', sans-serif
+}
+
+h1{
+  text-align: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.list-item, input[type="text"]{
   border-radius: 5px;
 }
 
-.card-start {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.list-item{
+  border: 2px solid skyblue;
+  min-width: 100%;
+  padding: 8px 13px;
+  background-color: whitesmoke;
+  font-weight: bold;
+  margin-bottom: 2px;
 }
 
-.card img {
- width: 48px; 
- border-radius: 5px;
+ul{
+  list-style: none;
+  padding-left: 0
+  
 }
-.card-mid {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+input[type="text"]{
   width: 100%;
-  margin-left: 16px;
+  padding: 10px 15px;
 }
 
-.card:hover {
-  box-shadow: 0 0px 15px rgba(255, 255, 255, .8);
+label{
+  font-size: 18px;
+  margin-bottom: -20px;
+  margin-left: 10px;
+  padding-left: 3px;
+  z-index: 1000;
+  background-color: white;
+  width: 43px 
 }
 
-h4.card-title {  
-  font-size: 17px;
-  margin: 0 0 3px 0;
-}
 
-.card-artist {
-  font-size: 13px;
-  margin: 0;
-}
-
-.card-menu {
-  font-size: 21px;
-  color: #888888;
-  transform: rotate(90deg);
-  width: 21px;
+button{
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px 17px;
   cursor: pointer;
-}
-
-.card-menu:hover {
-  color: #ffffff;
 }
