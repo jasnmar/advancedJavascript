@@ -32,6 +32,7 @@ let prevPrice = 0
 
 function renderStockTicker(stockData) {
   stockData.arrow = stockData.price > prevPrice ? '\u2BC5' : stockData.price < prevPrice ? '\u2BC6' : '\u2BC8'
+  stockData.class = stockData.price > prevPrice ? 'green' : stockData.price < prevPrice ? 'red' : 'grey'
 
   prevPrice = stockData.price
   const stockDisplayName = document.getElementById('name')
@@ -42,13 +43,13 @@ function renderStockTicker(stockData) {
   stockDisplayName.textContent = stockData.name
   stockDisplaySymbol.innerHTML = stockData.sym
   stockDisplayPriceIcon.textContent = stockData.arrow
+  stockDisplayPriceIcon.className = stockData.class
   stockDisplayPrice.textContent = stockData.price
   stockDisplayTime.textContent = stockData.time
 }
 const currentStockData = setInterval(() => {
   
   const data = getStockData()
-  console.log(data)
   renderStockTicker(data)
 }, 1500);
 
