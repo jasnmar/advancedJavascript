@@ -23,6 +23,9 @@ const characters = [
 
 for (let character of characters){
   console.log(character.powers)
+  for (let power of character.powers) {
+    console.log(power)
+  }
 /*
 Challenge:
 1. Nest a for of inside this for of to iterate over 
