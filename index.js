@@ -25,4 +25,4 @@ const pl2 = playlistArr.map((song) => {
 })
 
 
-document.getElementById('container').innerHTML = pl2
+document.getElementById('container').innerHTML = pl2.join('')
