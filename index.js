@@ -1,5 +1,8 @@
 const paragraph = "javaScript is the backbone of the internet. it was created in 1995. before JS, websites were so boring"
 
+const npara = paragraph.replaceAll(/(?<=\. |^)[a-zA-Z]/g,(startLetter) => startLetter.toUpperCase())
+
+console.log(npara)
 /*
 Challenge:
     1. Use replaceAll and regex to ensure the first 
