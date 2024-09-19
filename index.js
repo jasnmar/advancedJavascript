@@ -6,5 +6,6 @@ Challenge
 2. Do some simple maths to log out the class average. 
 */
 
-
-console.log(`The class average is ????`)
+const total = grades.reduce((tot, curr) => tot+curr)
+const average = total / grades.length
+console.log(`The class average is ${average}`)
