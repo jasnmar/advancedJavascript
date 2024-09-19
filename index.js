@@ -26,11 +26,12 @@ const characters = [
 // }
 
 characters.forEach(function(character){
-  console.log(character.powers)
+  character.powers.forEach(power => console.log(power))
+
+})
+
 /*
 Challenge:
 1. Nest a forEach to log out each individual
  power in each characters powers array.
 */
-})
-
