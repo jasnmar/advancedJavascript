@@ -43,9 +43,6 @@ Challenge:
  of all of the thrillers.
 */
 
-const thrillers = series.filter((show) => {
-  if(show.genres.filter((genre) => genre==='thriller').length>0)
-    return true
-})
+const thrillers = series.filter((show) => show.genres.includes('thriller'))
 
 console.log(thrillers)
