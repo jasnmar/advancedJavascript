@@ -6,8 +6,9 @@ Challenge
    instead of the for loop.
    ⚠️ Don't worry about the commas for now.
 */
-const pl2 = playlistArr.map((song) => {
-  return (
+const pl2 = []
+ playlistArr.forEach(song => {
+  pl2.push(
     `<section class="card">
     <div class="card-start">
         <img src="/images/${song.albumArt}">
@@ -22,7 +23,7 @@ const pl2 = playlistArr.map((song) => {
 </section>
     `
   )
-})
-
-
+});
+console.log('pl2: ', pl2)
+console.log('playlistArr: ', playlistArr)
 document.getElementById('container').innerHTML = pl2.join('')
