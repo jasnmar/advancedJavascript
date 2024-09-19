@@ -19,6 +19,8 @@ Challenge:
     if(!shoppingList.includes(itemInput.value)){
         shoppingList.push(itemInput.value)
         render()
+      } else {
+        console.log("No Duplicates")
       }
 
         itemInput.value = '' 
