@@ -1,11 +1,7 @@
-import { itemsBoughtArr } from '/itemsBoughtArr.js'
+function setPermissionLevel(permissionLevel, name1, name2, name3) {
+  console.log(`${name1} now has ${permissionLevel} level access.`)
+  console.log(`${name2} now has ${permissionLevel} level access.`)
+  console.log(`${name3} now has ${permissionLevel} level access.`)
+}
 
-const calculateTotalCost = (itemsBoughtArr, discount = 0) => itemsBoughtArr.reduce((acc, val) => acc + val.priceUSD, 0) - discount
-
-console.log(calculateTotalCost(itemsBoughtArr))
-
-/*
-Challenge:
-1. Use the reduce method to calculate the total 
-   cost of items which have been bought.
-*/
+setPermissionLevel('admin', 'Dave', 'Sally', 'Mike')
