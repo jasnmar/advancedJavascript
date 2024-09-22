@@ -1,4 +1,4 @@
-const speedWarning = speed => `You are going at ${speed} mph!`
+const speedWarning = (speedLimit, speed) => speed > speedLimit ? `You are going at ${speed} mph!` : ""
 
 console.log(speedWarning(30, 40))
 
