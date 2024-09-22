@@ -2,7 +2,7 @@ function getLabelsHtml(text, sender, ...recievers) {
   let newHtml = ``
   recievers.forEach((recipient) => {
     newHtml +=   `<div class="label-card">
-    <p>Dear ${recipient} </p>
+    <p>Dear ${recipient.name} </p>
     <p>${text}</p>
     <p>Best wishes,</p>
     <p>${sender}</p>
