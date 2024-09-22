@@ -1,6 +1,6 @@
 import { itemsBoughtArr } from '/itemsBoughtArr.js'
 
-const calculateTotalCost = itemsBoughtArr => itemsBoughtArr.reduce((acc, val) => acc + val.priceUSD, 0)
+const calculateTotalCost = (itemsBoughtArr, discount = 0) => itemsBoughtArr.reduce((acc, val) => acc + val.priceUSD, 0) - discount
 
 console.log(calculateTotalCost(itemsBoughtArr))
 
