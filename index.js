@@ -30,7 +30,15 @@ Challenge:
 1. Await these promises in order in a try/catch block and 
    when they are done, log 'All steps completed!'.
 */
+try {
+    await uploadFile()
+    await processFile()
+    await notifyUser()
+    console.log("All steps complete")
 
+} catch (err) {
+    console.log('err: ', err)
+}
 // expected output:
 
 // Step 1: Uploading file...
