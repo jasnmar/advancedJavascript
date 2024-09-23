@@ -7,7 +7,17 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="img-container"></div>
+  <main>
+		<section id="upload-container">
+			<h2>Select Images to Upload</h2>
+			<div class="image-file">mountains.jpg <span>❌</span></div>
+			<div class="image-file">valley.jpg <span>❌</span></div>
+			<div class="image-file">coast.jpg <span>❌</span></div>
+			<button id="submit-imgs" aria-controls="upload images">Upload Images</button>
+		</section>
+		<section class="img-container" id="img-container">
+		</section>
+	</main>
   <script src="/index.js" type="module"></script>
 </body>
 </html>
