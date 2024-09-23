@@ -2,6 +2,10 @@ const accountBalanceUsd = '$45,000,000,000 🤑💰'
 const swissBankPassCodesArr = [1234,5678,9876,3434]
 
 function authenticationCheck(passCode){
+
+    swissBankPassCodesArr.forEach((code) => {
+        (code === passCode) && console.log(accountBalanceUsd)
+    })
 /*
 Challenge:
 1. If the passcode passed into authenticationCheck 
@@ -16,4 +20,4 @@ Challenge:
 */
 }
 
-authenticationCheck(3434)
+authenticationCheck(5678)
