@@ -1,20 +1,22 @@
-/*
-Base URL: https://apis.scrimba.com/jsonplaceholder
-Endpoint: /posts
-Challenge:
-1. Make a fetch request to get all of the available posts.
-⚠️ Remember to handle all errors!
-*/
- 
-
 try {
-    const response = await fetch('https://apis.scrimba.com/jsonplaceholder/posts')
-    if (!response.ok)
-        throw new Error("Error with the API");
+    const response = await fetch('https://apis.scrimba.com/jsonplaceholder/posts', {method: 'POST'})
+    if (!response.ok) {
+        throw new Error('There was a problem with the API')
+    }
     const data = await response.json()
-    data.forEach(post => {
-        console.log('post: ', post)
-    });
+    console.log(data)
 } catch(err) {
-    console.log('err: ', err)
-}
+    console.log(err)
+}  
+
+/*
+Challenge:
+1. Using the code snippet in the slide, add a body 
+   property to the object we are passing with the 
+   fetch request. I want you to create a new post 
+   with the title “Holiday Nightmares” and the body 
+   “When I was kidnapped in Scotland…” 
+   
+   In the console, you should see and object with an 
+   ID, for example: {id: 101}
+*/
