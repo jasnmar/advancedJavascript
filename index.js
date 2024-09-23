@@ -1,15 +1,24 @@
-const image = new Image()
-image.src = "https://scrimba.ams3.cdn.digitaloceanspaces.com/asts/courses/gadvancedjs/scenic1.jpg"
-
-image.addEventListener('load', ()=>console.log("Image Loaded"))
-image.addEventListener('error', ()=>console.log("Image has NOT loaded"))
-
-console.log(image)
-
-/*
-Challenge:
-1. Create two event listeners. One should listen 
-   out for the image loading and log “Image has 
-   loaded”. The other should listen for an error 
-   and log “Image has NOT loaded”.
-*/
+function preLoadImg(url) {
+    return 
+  /*
+  Challenge:
+  1. Return a new promise. The promise should:
+      - create a new image and assign the incoming url 
+        to its src attribute. (Use the Image constructor 
+        for this!)
+      - listen out for a load event. If a load event is 
+        detected, the promise should resolve, providing the
+        image element.
+      - listen out for an “error” event. If an error 
+        event is detected, the promise should reject giving 
+        the message “img has NOT loaded”.
+  */
+  }
+  
+  try {
+    const results = await preLoadImg('https://scrimba.ams3.cdn.digitaloceanspaces.com/assets/courses/gadvancedjs/scenic1.jpg')
+    console.log(results)
+    document.getElementById('img-container').appendChild(results)
+  } catch (error) {
+    console.error(error)
+  }
