@@ -16,9 +16,11 @@ Challenge:
 */
 
 try {
-    // the code we want to try to execute
+    const response = await fetch('https://apis.scrimba.com/dog.ceo/api/breeds/image/random')
+    const data = await response.json()
+    console.log('data: ', data)
 } catch(err) {
-    // the code to execute on an error
+    console.log(err)
 } finally {
-    // code to execute at the end of the operation
+    console.log('The operation completed.')
 }
