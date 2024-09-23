@@ -1,8 +1,8 @@
 const image = new Image()
-image.src = "http://..."
+image.src = "https://scrimba.ams3.cdn.digitaloceanspaces.com/asts/courses/gadvancedjs/scenic1.jpg"
 
-image.addEventListener('load', console.log("Image Loaded"))
-image.addEventListener('error', console.log("Image has NOT loaded"))
+image.addEventListener('load', ()=>console.log("Image Loaded"))
+image.addEventListener('error', ()=>console.log("Image has NOT loaded"))
 
 console.log(image)
 
