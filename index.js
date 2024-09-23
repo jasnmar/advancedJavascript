@@ -1,6 +1,9 @@
 try {
     const response = await fetch('https://apis.scrimba.com/jsonplaceholder/posts', {
         method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({
             title: "Holiday Nightmares",
             body: "When I was kidnapped in Scotland…",
