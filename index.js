@@ -1,30 +1,42 @@
-async function preLoadImg(url) {
-    const promise = new Promise((resolve, reject) => {
-        const image = new Image()
-        image.src = url
-        image.addEventListener('load', ()=>resolve(image))
-        image.addEventListener('error', ()=>reject('image not loaded'))
-    })
-    return promise
-  /*
-  Challenge:
-  1. Return a new promise. The promise should:
-      - create a new image and assign the incoming url 
-        to its src attribute. (Use the Image constructor 
-        for this!)
-      - listen out for a load event. If a load event is 
-        detected, the promise should resolve, providing the
-        image element.
-      - listen out for an “error” event. If an error 
-        event is detected, the promise should reject giving 
-        the message “img has NOT loaded”.
-  */
-  }
-  
-  try {
-    const results = await preLoadImg('https://scrimba.ams3.cdn.digitaloceanspaces.com/assets/courses/gadvancedjs/scenic1.jpg')
-    console.log(results)
-    document.getElementById('img-container').appendChild(results)
-  } catch (error) {
-    console.error(error)
-  }
+// upload a file
+function uploadFile(callback){
+    console.log('Step 1: Uploading file...')
+    setTimeout(()=> {
+        callback() // call next function
+    }, 1000)
+}
+// process a file
+function processFile(callback){
+    console.log('Step 2: Processing file...')
+    setTimeout(()=> {
+        callback() // call next function
+    }, 1000)
+}
+// notify a user
+function notifyUser(callback){
+    console.log('Step 3: Notifying user...')
+    setTimeout(()=> {
+        callback() // call next function
+    }, 1000)
+}
+
+//uploadFile(processFile(notifyUser))
+uploadFile(()=>processFile(()=>notifyUser(()=>console.log('All steps completed'))))
+
+
+/* 
+Challenge:
+1. Try to invoke these functions so they run in sequence. 
+   The callback function passed to the final function (notifyUser) 
+   can just be an anonymous function that logs 'All steps completed!'
+   
+   You will come up against a gotcha here! 
+   hint.md is here to help!
+*/
+
+// expected output:
+
+// Step 1: Uploading file...
+// Step 2: Processing file...
+// Step 3: Notifying user...
+// All steps completed!
