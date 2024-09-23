@@ -1,18 +1,9 @@
-// Challenge:
-// 1. Predict what will be logged to the console.
-
-function getWeather() {
-  return "Today's weather is warm and sunny"
-}
-
-console.log(getWeather()) // What will this log?
-
-console.log(getNews()) // What will this log?
-
-function getNews() {
-  return "A new swimming pool has opened in the town centre..."
-}
-
-console.log(trafficInfo) // What will this log?
-
-let trafficInfo = 'All roads are busy right now'
+/*
+Challenge:
+    1. Make a fetch request to the "Bored" API: 
+         Base URL: https://apis.scrimba.com/bored/api
+         Endpoint: /activity
+    2. Log an object containing an activity suggestion 
+       to the console.
+    🛟 hint.md for help!
+*/
