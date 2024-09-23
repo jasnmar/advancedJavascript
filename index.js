@@ -19,7 +19,7 @@ function addBookToCollection(title, author, yearPublished, libraryData) {
     // Explicitly check for title
     const newTitle = title || 'Unknown Title'
     const newAuth = author || 'Unknown Author'
-    const newYear = yearPublished || 'Not Specified'
+    const newYear = yearPublished ?? 'Not Specified'
     const newAvailable = (libraryData?.locations?.mainLibrary && 'Available') || 'Not Available'
 
 
