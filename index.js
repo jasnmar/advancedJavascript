@@ -1,5 +1,11 @@
-function preLoadImg(url) {
-    return 
+async function preLoadImg(url) {
+    const promise = new Promise((resolve, reject) => {
+        const image = new Image()
+        image.src = url
+        image.addEventListener('load', ()=>resolve(image))
+        image.addEventListener('error', ()=>reject('image not loaded'))
+    })
+    return promise
   /*
   Challenge:
   1. Return a new promise. The promise should:
