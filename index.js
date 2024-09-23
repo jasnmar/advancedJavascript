@@ -14,6 +14,8 @@ const library = {
         }
     }
 }
+console.log(library?.sections?.fiction?.genres?.fantasy[0])
+
 
 /*
 Challenge:
@@ -21,6 +23,6 @@ Challenge:
        Notice how undefined is returned if you break the chain. 
 */
 
-console.log(library && library.sections && library.sections.fiction && library.sections.fiction.genres && library.sections.fiction.genres.fantasy[0])
+// console.log(library && library.sections && library.sections.fiction && library.sections.fiction.genres && library.sections.fiction.genres.fantasy[0])
 
 // console.log(library.sections.fiction.genres.fantasy[0].year)
