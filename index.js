@@ -5,9 +5,7 @@ Challenge:
          Endpoint: /activity
     2. Log an object containing an activity suggestion 
        to the console.
+    ⚠️ Make sure you use the async/await method!
     🛟 hint.md for help!
 */
 
-fetch('https://apis.scrimba.com/bored/api/activity')
-    .then((response) => response.json())
-    .then((data) => console.log('data: ', data.activity))
