@@ -1,16 +1,23 @@
+/*
+Challenge:
+1. Get the promise working so it returns “Operation successful!” 
+   if it resolves and "Operation failed." if it rejects. 
+*/
 
-const promise = new Promise((resolve, reject)=> {
+const promise = => {
     const success = Math.random() > 0.5
-    if (success) {
-        resolve('Operation Successful')
+    if (success) { 
+      
     } else {
-        reject('Operation failed')
+
     }
 })
 
+// promise.then(response => console.log(response))
+
 try {
     const response = await promise
-    console.log('promise: ', promise)
-} catch (err) {
-    console.log('err: ', err)
+    console.log(response)
+} catch(err) {
+    console.log(err)
 }
