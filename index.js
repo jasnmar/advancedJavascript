@@ -1,23 +1,26 @@
-const accountBalanceUsd = '$45,000,000,000 🤑💰'
-const swissBankPassCodesArr = [1234,5678,9876,3434]
-
-function authenticationCheck(passCode){
-
-    swissBankPassCodesArr.forEach((code) => {
-        (code === passCode) && console.log(accountBalanceUsd)
-    })
-/*
-Challenge:
-1. If the passcode passed into authenticationCheck 
-   exists in swissBankPassCodesArr, authenticationCheck 
-   should log out accountBalanceUsd. 
-   
-   If the passcode does not exist in swissBankPassCodesArr 
-   then authenticationCheck need not do anything.
-   
-⚠️ Make sure you short-circuit with &&
-   hint.md for help!
-*/
+const library = {
+    sections: {
+        fiction: {
+            genres: {
+                fantasy: [
+                    { title: "The Hobbit", author: "J.R.R. Tolkien", year: 1937 },
+                    { title: "A Game of Thrones", author: "George R.R. Martin", year: 1996 }
+                ],
+                scienceFiction: [
+                    { title: "Dune", author: "Frank Herbert", year: 1965 },
+                    { title: "Neuromancer", author: "William Gibson", year: 1984 }
+                ]
+            }
+        }
+    }
 }
 
-authenticationCheck(5678)
+/*
+Challenge:
+    1. Use the logical AND operator to log The Hobit object. 
+       Notice how undefined is returned if you break the chain. 
+*/
+
+console.log(library && library.sections && library.sections.fiction && library.sections.fiction.genres && library.sections.fiction.genres.fantasy[0])
+
+// console.log(library.sections.fiction.genres.fantasy[0].year)
