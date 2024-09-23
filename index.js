@@ -17,36 +17,18 @@ const collection = []
 
 function addBookToCollection(title, author, yearPublished, libraryData) {
     // Explicitly check for title
-    if (title === undefined || title === null || title === '') {
-        title = 'Unknown Title'
-    }
+    const newTitle = title || 'Unknown Title'
+    const newAuth = author || 'Unknown Author'
+    const newYear = yearPublished || 'Not Specified'
+    const newAvailable = (libraryData?.locations?.mainLibrary && 'Available') || 'Not Available'
 
-    // Explicitly check for author
-    if (author === undefined || author === null || author === '') {
-        author = 'Unknown Author'
-    }
-
-    // Explicitly check if yearPublished is undefined or null
-    if (yearPublished === undefined || yearPublished === null) {
-        yearPublished = 'Not Specified'
-    }
-
-    // Explicitly check for availability at main library
-    let availability = 'Not Available' // Default value
-    if (libraryData) {
-        if (libraryData.locations) {
-            if (libraryData.locations.mainLibrary) {
-                availability = 'Available'
-            }
-        }
-    }
 
     // Push the book object to 'collection'
     collection.push({
-        title: title,
-        author: author,
-        yearPublished: yearPublished,
-        availability: availability
+        title: newTitle,
+        author: newAuth,
+        yearPublished: newYear,
+        availability: newAvailable
     })
 }
 // Examples of adding a book
