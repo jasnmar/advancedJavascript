@@ -1,23 +1,15 @@
+const image = new Image()
+image.src = "http://..."
+
+image.addEventListener('load', console.log("Image Loaded"))
+image.addEventListener('error', console.log("Image has NOT loaded"))
+
+console.log(image)
+
 /*
 Challenge:
-1. Get the promise working so it returns “Operation successful!” 
-   if it resolves and "Operation failed." if it rejects. 
+1. Create two event listeners. One should listen 
+   out for the image loading and log “Image has 
+   loaded”. The other should listen for an error 
+   and log “Image has NOT loaded”.
 */
-
-const promise = new Promise((resolve, reject) => {
-    const success = Math.random() > 0.5
-    if (success) { 
-      resolve("Operation Successful")
-    } else {
-        reject("Operation failed")
-    }
-})
-
-// promise.then(response => console.log(response))
-
-try {
-    const response = await promise
-    console.log(response)
-} catch(err) {
-    console.log(err)
-}
