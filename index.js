@@ -9,7 +9,12 @@ const books = {
   // array contains two elements: the key and the value of each 
   // property in the object.
   
-  const bookEntries = 
+  const bookEntries = Object.entries(books)
+
+ bookEntries.filter((book) => book[1].price > 16).forEach(([id, data]) => console.log(`ID: ${id} Book: ${data.title} $${data.price}`))
+
+
+
   
   /*
   Challenge:
