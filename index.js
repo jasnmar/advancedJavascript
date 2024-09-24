@@ -4,7 +4,12 @@ const books = {
     "b003": { title: "The Great Gatsby", price: 12.49, isAvailable: true },
     "b004": { title: "Moby Dick", price: 22.50, isAvailable: false }
   }
+
+  const bookKeys = Object.keys(books)
+  console.log('bookKeys: ', bookKeys)
   
+  bookKeys.forEach(key => console.log(key))
+  bookKeys.forEach(key => console.log(books[key].title))
   /*
   Challenge:
     1. Use Object.keys to get an array of keys. 
