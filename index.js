@@ -2,12 +2,11 @@ function Event(name, location, date) {
     this.name = name
     this.location = location
     this.date = date
-    this.getDetails = function() {
-        return `Event: ${this.name}, Location: ${this.location}, Date: ${this.date}`
-    }
 }
 
-
+Event.prototype.getDetails = function() {
+    return `Event: ${this.name}, Location: ${this.location}, Date: ${this.date}`
+}
 
 /*
 Challenge:
