@@ -14,3 +14,22 @@ Challenge:
 */
 
 
+function Character(name) {
+    this.name = name,
+    this.collectedItemsArr = [],
+    this.addItem = function(item) {
+        this.collectedItemsArr.push(item)
+        const items = this.collectedItemsArr.join(", ")
+        console.log(`${this.name} now has: ${items}`)
+    }
+}
+
+const merlin = new Character('merlin')
+
+merlin.addItem("wand")
+merlin.addItem("brick")
+const amanda = new Character('Amanda')
+amanda.addItem('horse')
+amanda.addItem('carriage')
+console.log('merlin: ', merlin)
+console.log('amanda: ', amanda)
