@@ -1,6 +1,7 @@
 const user1 = {
     username: "rpchan",
     subscriptionLevel: "bronze",
+    accessPremiumFeature: false
   }
   
   const user2 = {
@@ -10,11 +11,7 @@ const user1 = {
   }
   
   function canAccessPremiumFeature(userObj, prop) {
-
-    if(userObj.hasOwnProperty(prop)) {
-        return userObj[prop]
-    }
-    return false
+    return userObj[prop] || false
   /*
   Challenge:
   1. Write logic to check if the object has the property. 
