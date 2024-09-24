@@ -1,16 +1,16 @@
-class Employee {
-    constructor(name) {
-        this.name = name
-    }
 /*
 Challenge:
-1. Set up a static method called getNewIntern. 
-   getNewIntern should return an object with a 'name' property, 
-   a 'role' property which is hard-coded to ‘intern’, and a 
-   'startDate' property which should be the time of code execution. 
-   (🤔 How can you use JS to get the time right now?)
+1. Create a constructor function called 'Character'.
+2. Give it 'name' and 'collectedItemsArr' properties. 
+    - 'name' should hold the character’s name.
+	- 'collectedItemsArr' should hold an array of items. 
+       Initialise it to an empty array.
+3. Create an 'addItem' method which takes in an item as 
+   a parameter and adds it to 'collectedItemsArr'.
+4. The addItem method should log out a sentence like 
+   `Merlin now has: wand, map, potion`.
+5. Check it’s working by creating several instances of 
+   Character and adding items to their arrays.
 */
-}
 
- console.log(Employee.getNewIntern('Dave'))
 
