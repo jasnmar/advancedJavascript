@@ -10,28 +10,17 @@ Event.prototype.getDetails = function() {
 
 /*
 Challenge:
-    1. Remove getDetails from the Event constructor's body 
-       and add it to the Event constructor’s prototype. 
+    1. Set up a constructor for 'Conference' which 
+       should take in 'keynoteSpeaker' as a parameter. 
+    2. 'Conference' should inherit from 'Event'.
+    3. 'Conference' should have its own method 'getDetails'
+       which calls Event's getDetails method and returns a string 
+       with name, location, date, and keynote speaker.  
+    4. When you set up an instance of Conference and call 
+       displayDetails you should log out: 
+       Event: 10 Nights of JS, Location: Scrimba HQ, Date: 2025-09-29 Keynote Speaker: Ashley Smith
+       📝 The new method should be on the prototype. 
 */
 
-Event.prototype.cancelEvent = function() {
-    return 'Event Cancelled'
-}
-
-function Concert(name, location, date, headliner) {
-    Event.call(this, name, location, date)
-    this.headliner = headliner
-    // this.getDetails = function() {
-        
-    // }
-}
-
-Concert.prototype = Object.create(Event.prototype)
-Concert.prototype.constructor = Concert
-
-const concert = new Concert("Summer Beats", "City Stadium", "2024-07-15", "The Electrons")
-const concert2 = new Concert("Concert Two", "Highlands Park", "2024-08-08", "Dave Notes")
-const concert3 = new Concert("Concert Three", "Highlands Park", "2024-08-08", "Dave Notes")
-console.log(concert)
-console.log(concert2)
-console.log(concert3)
+const conference = new Conference("10 Nights of JS", "Scrimba HQ", "2025-09-29", "Ashley Smith")
+conference.getDetails()
