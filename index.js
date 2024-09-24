@@ -10,6 +10,18 @@ class Event {
     }
 }
 
+class TennisMatch extends Event {
+    constructor(name, location, date, player1, player2) {
+        super(name, location, date)
+        this.player1 = player1
+        this.player2 = player2
+    }
+    getDetails() {
+        const eventBasics = super.getDetails()
+        return `${eventBasics} Match: ${this.player1} vs ${this.player2}`
+    }
+}
+
 /*
 Challenge:
     1. Set up a class 'TennisMatch' which 
@@ -25,5 +37,5 @@ Challenge:
        Hint.md for help 🛟
 */
 
-// const tennisMatch = new TennisMatch("Grand Slam Final", "Wimbledon", "2025-07-15", "J Bloggs", "B Doe")
-// console.log(tennisMatch.getDetails())
+const tennisMatch = new TennisMatch("Grand Slam Final", "Wimbledon", "2025-07-15", "J Bloggs", "B Doe")
+console.log(tennisMatch.getDetails())
