@@ -5,12 +5,29 @@ const books = {
     "b004": { title: "Moby Dick", price: 22.50, isAvailable: false }
   }
   
+  // Object.entries returns an array of arrays, where each inner 
+  // array contains two elements: the key and the value of each 
+  // property in the object.
+  
+  const bookEntries = 
+  
   /*
   Challenge:
-    1. Create an array of values using Object.values
-    2. Iterate over it and log out each book price.
+    1. Use Object.entries to create an array from 'books'.
+    2. Use an array method to filter out the books 
+       which cost less than 16.
+    3. Iterate over the remaining books and log a string 
+       for each book in this format:
+       ID: b001 Book: To Kill a Mockingbird £18.99
+  Bonus points:
+    1. Make your code DRYer by destructuring the array 
+       where it is passed into a method.
+    2. Chain the array methods together.
   */
   
-  const bookValues = Object.values(books)
-
-  bookValues.forEach(book => console.log(book.price))
+  
+  /*
+      Expected Output:
+      ID: b001 Book: To Kill a Mockingbird £18.99
+      ID: b004 Book: Moby Dick £22.5
+  */
