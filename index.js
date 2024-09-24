@@ -1,18 +1,16 @@
-// Challenge:
-// 1. Predict what will be logged to the console.
-
-function getWeather() {
-  return "Today's weather is warm and sunny"
+class Employee {
+    constructor(name) {
+        this.name = name
+    }
+/*
+Challenge:
+1. Set up a static method called getNewIntern. 
+   getNewIntern should return an object with a 'name' property, 
+   a 'role' property which is hard-coded to ‘intern’, and a 
+   'startDate' property which should be the time of code execution. 
+   (🤔 How can you use JS to get the time right now?)
+*/
 }
 
-console.log(getWeather()) // What will this log?
+ console.log(Employee.getNewIntern('Dave'))
 
-console.log(getNews()) // What will this log?
-
-function getNews() {
-  return "A new swimming pool has opened in the town centre..."
-}
-
-console.log(trafficInfo) // What will this log?
-
-let trafficInfo = 'All roads are busy right now'
