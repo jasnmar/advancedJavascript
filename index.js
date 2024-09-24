@@ -11,4 +11,6 @@ const books = {
     2. Iterate over it and log out each book price.
   */
   
-  const bookValues = 
+  const bookValues = Object.values(books)
+
+  bookValues.forEach(book => console.log(book.price))
