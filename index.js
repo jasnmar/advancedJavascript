@@ -1,39 +1,29 @@
-function Event(name, location, date) {
-    this.name = name
-    this.location = location
-    this.date = date
-}
+class Event {
+    constructor(name, location, date) {
+        this.name = name
+        this.location = location
+        this.date = date
+    }
 
-Event.prototype.getDetails = function() {
-    return `Event: ${this.name}, Location: ${this.location}, Date: ${this.date}`
-}
-
-function Conference(name, location, date, keynoteSpeaker) {
-    Event.call(this, name, location, date)
-    this.keynoteSpeaker = keynoteSpeaker
-}
-
-Conference.prototype = Object.create(Event.prototype)
-Conference.prototype.constructor = Conference
-
-Conference.prototype.getDetails = function () {
-    const eventBasics = Event.prototype.getDetails.call(this)
-    return `${eventBasics} Keynote: ${this.keynoteSpeaker}`
+    getDetails() {
+        return `Event: ${this.name}, Location: ${this.location}, Date: ${this.date}`
+    }
 }
 
 /*
 Challenge:
-    1. Set up a constructor for 'Conference' which 
-       should take in 'keynoteSpeaker' as a parameter. 
-    2. 'Conference' should inherit from 'Event'.
-    3. 'Conference' should have its own method 'getDetails'
-       which calls Event's getDetails method and returns a string 
-       with name, location, date, and keynote speaker.  
-    4. When you set up an instance of Conference and call 
-       displayDetails you should log out: 
-       Event: 10 Nights of JS, Location: Scrimba HQ, Date: 2025-09-29 Keynote Speaker: Ashley Smith
-       📝 The new method should be on the prototype. 
+    1. Set up a class 'TennisMatch' which 
+       should take in 'player1' and 'player2' as parameters. 
+    2. 'TennisMatch' should inherit properties and methods 
+       from 'Event'.
+    3. 'TennisMatch' should have its own method 'getDetails'
+       which calls Event's getDetails method to get the 
+       basic details of the event. It should return this string:
+       ${eventBasics} Match: ${this.player1} vs ${this.player2}
+    4. Uncomment my code below to create a new instance of TennisMatch
+       and call the getDetails method. 
+       Hint.md for help 🛟
 */
 
-const conference = new Conference("10 Nights of JS", "Scrimba HQ", "2025-09-29", "Ashley Smith")
-console.log(conference.getDetails())
+// const tennisMatch = new TennisMatch("Grand Slam Final", "Wimbledon", "2025-07-15", "J Bloggs", "B Doe")
+// console.log(tennisMatch.getDetails())
