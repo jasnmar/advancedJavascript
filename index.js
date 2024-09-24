@@ -5,6 +5,7 @@ const studentDetails = {
     country: 'sri lanka',
     email: 'j.siri@totalinternet.com',
     discordUsername: 'JS1',
+    courses: ['intro to javascript', 'advanced javascript']
     }  
     
 const studentDetailsCopy = {}
@@ -17,3 +18,7 @@ console.log(studentDetailsCopy)
 Challenge:
     1. Prove that what we have created here is a shallow copy.
 */
+studentDetailsCopy.courses[0] = 'blonde'
+
+console.log(studentDetailsCopy)
+console.log(studentDetails)
