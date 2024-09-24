@@ -8,6 +8,19 @@ Event.prototype.getDetails = function() {
     return `Event: ${this.name}, Location: ${this.location}, Date: ${this.date}`
 }
 
+function Conference(name, location, date, keynoteSpeaker) {
+    Event.call(this, name, location, date)
+    this.keynoteSpeaker = keynoteSpeaker
+}
+
+Conference.prototype = Object.create(Event.prototype)
+Conference.prototype.constructor = Conference
+
+Conference.prototype.getDetails = function () {
+    const eventBasics = Event.prototype.getDetails.call(this)
+    return `${eventBasics} Keynote: ${this.keynoteSpeaker}`
+}
+
 /*
 Challenge:
     1. Set up a constructor for 'Conference' which 
@@ -23,4 +36,4 @@ Challenge:
 */
 
 const conference = new Conference("10 Nights of JS", "Scrimba HQ", "2025-09-29", "Ashley Smith")
-conference.getDetails()
+console.log(conference.getDetails())
