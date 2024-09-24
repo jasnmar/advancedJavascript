@@ -1,24 +1,27 @@
-const studentDetails = {
-    firstName: 'janaka',
-    lastName: 'siriwardena',
-    age: 28,
-    country: 'sri lanka',
-    email: 'j.siri@totalinternet.com',
-    discordUsername: 'JS1',
-    courses: ['intro to javascript', 'advanced javascript']
-    }  
-    
-const studentDetailsCopy = {}
+const button = document.getElementById('btn')
 
-Object.assign(studentDetailsCopy, studentDetails)
-
-console.log(studentDetailsCopy)
+const product = {
+    name: 'Vanilla Lip Gloss',
+    sku: 'w234fg',
+    stock: 276,
+    getProductInfo: function() {
+        console.log(`Stock level for ${this.name} (SKU: ${this.sku}): ${this.stock}`)
+    }
+}
 
 /*
-Challenge:
-    1. Prove that what we have created here is a shallow copy.
-*/
-studentDetailsCopy.courses[0] = 'blonde'
+Challenge 1:
+  What is the 'this' value of 'product.getProductInfo' as we
+  are using it now in the eventListener?
+  Write your answer here:
 
-console.log(studentDetailsCopy)
-console.log(studentDetails)
+Challenge 2:
+  Debug the code so it works as intended.
+*/
+
+
+button.addEventListener('click', product.getProductInfo)
+
+
+
+
