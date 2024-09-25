@@ -1,23 +1,20 @@
-function countUp(start, end) {
-    console.log(start)
-    if(start >= end){
-        return start
-    } 
-    countUp(start+1,end)
-    /*
-    Challenge:
-    1. Create a counter which counts up from a 
-       provided start number to a provided end 
-       number. It should log each number in turn.
-    */	
+let str = 'SCRIMBA'
+let newStr = ""
+
+function reverseStr(str) {
+
+    if (str.length===0) {
+        console.log(newStr)
+        return newStr
+    } else {
+        newStr += str.slice(-1)
+        reverseStr(str.slice(0,-1))
     }
-    countUp(2,6)
-    
-    // So calling countUp(2, 6) should log:
-    // 2
-    // 3
-    // 4
-    // 5
-    // 6
-    
-    
+/*
+Challenge:
+    1. Write logic for a recursive function 
+       that reverses a string.
+    🛟 hint.md for help!
+*/
+}
+console.log(reverseStr(str))
