@@ -6,8 +6,14 @@ Challenge:
     2. Log out the new property.
 */
 
+const note = Symbol('note')
+
 const book = {
     title: "The Catcher in the Rye",
     author: "J.D. Salinger",
     year: 1951
 }
+
+book[note] = 'missing'
+
+console.log(book[note])
