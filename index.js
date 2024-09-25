@@ -1,19 +1,14 @@
-/*
-Challenge:
-    1. Add a hidden property to the book object 
-       holding a librarian’s note to say the book 
-       has gone missing. 
-    2. Log out the new property.
-*/
+const athlete1 = { name: "Alice", age: "50" }
+const athlete2 = { name: "Dave", age: "51" }
+const athlete3 = { name: "Nicky", age: "49" }
 
-const note = Symbol('note')
+const finishers = new Map()
 
-const book = {
-    title: "The Catcher in the Rye",
-    author: "J.D. Salinger",
-    year: 1951
-}
+finishers.set(athlete1, 10000)
+finishers.set(athlete2, 10200)
+finishers.set(athlete3, 9800)
 
-book[note] = 'missing'
+// finishers.forEach((value, key)=> console.log(key.name, value))
+// console.log(finishers.size)
+console.log(finishers.get(athlete3))
 
-console.log(book[note])
