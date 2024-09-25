@@ -1,18 +1,20 @@
-// Challenge:
-// 1. Predict what will be logged to the console.
-
-function getWeather() {
-  return "Today's weather is warm and sunny"
+function scorePoint(playerName) {
+    let score = 0
+    return {
+        displayScore: function () {
+            console.log(`${playerName} has ${score} points`)
+        }
+/*
+Challenge:
+   1. Add two more functions to this object. One to increment 
+      the score and one to decrement the score. Call those functions 
+      a couple of times for each player and then call displayScore 
+      to check it’s working. 
+*/
+    }
 }
 
-console.log(getWeather()) // What will this log?
+const player1 = scorePoint('Vicky')
+const player2 = scorePoint('Leo')
 
-console.log(getNews()) // What will this log?
-
-function getNews() {
-  return "A new swimming pool has opened in the town centre..."
-}
-
-console.log(trafficInfo) // What will this log?
-
-let trafficInfo = 'All roads are busy right now'
+player1.displayScore()
