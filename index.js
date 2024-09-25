@@ -1,36 +1,18 @@
-const athlete1 = { name: 'Alice', averageTime10KmMins: 58.3 }
-const athlete2 = { name: 'Dave', averageTime10KmMins: 53.2 }
-const athlete3 = { name: 'Micky', averageTime10KmMins: 64.5 }
-const athlete4 = { name: 'Judy', averageTime10KmMins: 66.0 }
+/* Challenge:
+    1. Refactor this code to use a Set instead  
+       of an array so no tags can be duplicated!
+*/
 
-/* Challenge */
+const postTags = []
 
-/* 1. Create a map object "athletes" to store the athletes. */
-const athletes = new Map()
-
-function addAthlete(athlete, time) {
-    athletes.set(athlete, time)
-    
-/* 2. This function should add athletes to the "athletes" map. */
+function addTag(newTag) {
+    postTags.push(newTag)
 }
 
-function getSummary(){
-    console.log('athletes: ', athletes)
-    athletes.forEach((value, key) => {
-        console.log(`${key.name}'s average time is ${key.averageTime10KmMins} but today ${key.name} achieved ${value}`)
-    })
-        
-    }
-/* This function should make the following appear in the console */
-    
-//Alice's average time is 58.3 but today Alice achieved 57.3
-//Dave's average time is 53.2 but today Dave achieved 61.1
-//Micky's average time is 64.5 but today Micky achieved 59.9
-//Judy's average time is 66 but today Judy achieved 61.6
+addTag('history')
+addTag('romans')
+addTag('sociology')
+addTag('history')
+addTag('history')
 
-addAthlete(athlete1, 57.3)
-addAthlete(athlete2, 61.1)
-addAthlete(athlete3, 59.9)
-addAthlete(athlete4, 61.6)
-
-getSummary()
+postTags.forEach((tag) => console.log(tag))
