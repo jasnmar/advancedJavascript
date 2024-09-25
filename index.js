@@ -12,3 +12,6 @@ finishers.set(athlete3, 9800)
 // console.log(finishers.size)
 console.log(finishers.get(athlete3))
 
+finishers.delete(athlete3)
+
+finishers.forEach((value, key)=> console.log(key.name, value))
