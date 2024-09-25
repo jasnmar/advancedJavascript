@@ -1,4 +1,38 @@
 class Character {
+    #health
+    static count = 0
+    constructor(name) {
+        this.name = name
+        this.#health = 100
+        this.isAlive = true
+        Character.count++
+    }
+    static getCount() {
+        return Character.count
+    }
+    static incrementCount () {
+        Character.count++
+    }
+    get getStatus() {
+        return this.#health
+    }
+    set takeDamage(damage) {
+        this.#health = this.#health - damage
+        if(this.#health < 0) {
+            this.isAlive = false
+            this.#health = 0
+        }
+    }
+    isAlive() {
+        return this.isAlive
+    }
+    getStatus() {
+        const isAliveText = this.isAlive ? `Alive` : 'Dead'
+        return `${this.name} has ${this.#health} health and is currently ${isAliveText}`
+    }
+    isAlive(life) {
+        this.isAlive = life
+    } 
     /* Base Character Class
     Your task is to design and implement a Character class with properties 'name' (a string), 'health' (a number), and isAlive (a boolean). This class will serve as a foundation for a simple game or simulation where characters can take damage and possibly "die" if their health reaches zero.
     
@@ -27,7 +61,17 @@ class Character {
     */
     }
     
-    class Hero {
+    class Hero extends Character {
+        constructor (name) {
+            super(name)
+            this.inventory = []
+        }
+        pickUpItem(item) {
+            this.inventory.push(item)
+        }
+        getItems() {
+            return `${this.name} has the following items: ${this.inventory.join(", ")}`
+        }
     /* The Hero class
     The Hero class should inherit from Character. This new class should include additional functionality to manage an inventory of items that the hero can collect during gameplay.
     
@@ -44,7 +88,14 @@ class Character {
      
     }
     
-    class Villain  {
+    class Villain extends Character {
+        constructor (name, threat) {
+            super(name)
+            this.threat = threat
+        }
+        getThreat() {
+            return this.threat
+        }
     /* The Villain class
     The Villain class should inherit from Character. This new class should include additional functionality to allow the villain to issue a threat.
     
@@ -63,12 +114,12 @@ class Character {
     
     console.log(troll.getThreat()) // I will destroy your soul!
     merlin.pickUpItem("Sword")
-    merlin.takeDamage(15)
-    medea.takeDamage(5)
+    merlin.takeDamage=15
+    medea.takeDamage=5
     medea.pickUpItem("Shield")
     console.log(merlin.getItems()) // Merlin has the following items: Sword
     console.log(medea.getItems()) // Medea has the following items: Shield
-    troll.takeDamage(101)
+    troll.takeDamage =101
     console.log(troll.getStatus()) //Troll has 0 health and is dead.
     console.log(medea.getStatus()) // Medea has 95 health and is alive.`
     console.log(merlin.getStatus()) // Merlin has 85 health and is alive.
