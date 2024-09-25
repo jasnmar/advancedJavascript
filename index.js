@@ -1,11 +1,18 @@
-/* Challenge:
-    1. Convert this function to an IIFE.
-       You will need to figure out how to make 
-       it async and how to pass in parameters.
-*/
-
-(async function displayWeather(country) {
-    const weather = await fetch('/geo.json')
-    const weatherObj = await weather.json()
-    console.log(`The weather in the ${country} today is ${weatherObj[country]}`)    
-})('Japan')
+function countUp(start, end) {
+    /*
+    Challenge:
+    1. Create a counter which counts up from a 
+       provided start number to a provided end 
+       number. It should log each number in turn.
+    */	
+    }
+    
+    
+    // So calling countUp(2, 6) should log:
+    // 2
+    // 3
+    // 4
+    // 5
+    // 6
+    
+    
