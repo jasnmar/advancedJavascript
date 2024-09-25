@@ -17,13 +17,36 @@ Requirements:
   from it. 
 */
 
-function createBankAccount() {
+function createBankAccount(name) {
+
+    let value = 0
+    return {
+        deposit: function(amount) {
+            value += amount
+        },
+        withdrawl: function(amount) {
+            if(amount<value) {
+                value -= amount
+            } else {
+                throw new Error('Not enough Money')
+            }
+        },
+        getBalance: function() {
+            console.log('amount: ', `${name} has $${value}`)
+        }
+    }
     
     // Write logic here    
     
     }
     
-    const daveAccount = createBankAccount()
-    const wendyAccount = createBankAccount()
-    
+    const daveAccount = createBankAccount('dave')
+    const wendyAccount = createBankAccount('wendy')
+    daveAccount.getBalance()
+    daveAccount.deposit(100)
+    daveAccount.getBalance()
+    daveAccount.withdrawl(40)
+    daveAccount.getBalance()
+
+
     // Test your code by calling the functions.
