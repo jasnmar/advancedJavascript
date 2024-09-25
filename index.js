@@ -1,20 +1,31 @@
-class Employee {
-    constructor(name) {
-        this.name = name
+class Holiday {    
+    /*
+    Challenge:
+        1. Make 'price' a private field.
+        2. Create a getter for price which appends a $ sign 
+           to the front and displays it to a max of 2 decimal 
+           places. 
+        3. Create a setter for price which updates price with a 
+           new price.
+        4. Test! 
+    */
+        #destination
+        constructor(destination, price) {
+            this.#destination = destination
+            this.price = price
+        }
+    
+        get destination() {
+            return this.#destination
+        }
+    
+        set destination(newDestination) {
+            if (typeof newDestination !== 'string' || newDestination.length <= 0){
+                throw new Error('Destination not valid')
+            }
+            this.#destination = newDestination
+        }
     }
-    static getNewIntern(name) {
-        const now = new Date()
-        return {name:name, role:"intern", startDate:now}
-    }
-/*
-Challenge:
-1. Set up a static method called getNewIntern. 
-   getNewIntern should return an object with a 'name' property, 
-   a 'role' property which is hard-coded to ‘intern’, and a 
-   'startDate' property which should be the time of code execution. 
-   (🤔 How can you use JS to get the time right now?)
-*/
-}
-
- console.log(Employee.getNewIntern('Dave'))
-
+    
+    const safari = new Holiday('Kenya', 1000)
+    console.log(safari.price)
