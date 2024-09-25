@@ -1,18 +1,13 @@
-// Challenge:
-// 1. Predict what will be logged to the console.
+/*
+Challenge:
+    1. Add a hidden property to the book object 
+       holding a librarian’s note to say the book 
+       has gone missing. 
+    2. Log out the new property.
+*/
 
-function getWeather() {
-  return "Today's weather is warm and sunny"
+const book = {
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    year: 1951
 }
-
-console.log(getWeather()) // What will this log?
-
-console.log(getNews()) // What will this log?
-
-function getNews() {
-  return "A new swimming pool has opened in the town centre..."
-}
-
-console.log(trafficInfo) // What will this log?
-
-let trafficInfo = 'All roads are busy right now'
