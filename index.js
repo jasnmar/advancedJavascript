@@ -3,6 +3,12 @@ function scorePoint(playerName) {
     return {
         displayScore: function () {
             console.log(`${playerName} has ${score} points`)
+        },
+        incrementScore: function () {
+            score++
+        },
+        decrementScore: function () {
+            score--
         }
 /*
 Challenge:
@@ -16,5 +22,13 @@ Challenge:
 
 const player1 = scorePoint('Vicky')
 const player2 = scorePoint('Leo')
+
+
+player1.incrementScore()
+player1.incrementScore()
+player1.incrementScore()
+player1.incrementScore()
+player1.incrementScore()
+player1.decrementScore()
 
 player1.displayScore()
