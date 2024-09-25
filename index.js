@@ -1,34 +1,29 @@
-function scorePoint(playerName) {
-    let score = 0
-    return {
-        displayScore: function () {
-            console.log(`${playerName} has ${score} points`)
-        },
-        incrementScore: function () {
-            score++
-        },
-        decrementScore: function () {
-            score--
-        }
-/*
-Challenge:
-   1. Add two more functions to this object. One to increment 
-      the score and one to decrement the score. Call those functions 
-      a couple of times for each player and then call displayScore 
-      to check it’s working. 
+/* 
+Challenge: 
+    1. Write a function that simulates a simple bank account. 
+       The function should store the balance and enable users  
+       to deposit money, withdraw money, and check the balance.
+
+Requirements:
+
+- The account balance should start at zero.
+
+- The function should return an object containing 
+  3 functions. One for depositing money, one for 
+  withdrawing money, and a getBalance function which 
+  logs the balance and the account holder's name.
+
+- Deposits should add to the balance, and withdrawals should subtract 
+  from it. 
 */
+
+function createBankAccount() {
+    
+    // Write logic here    
+    
     }
-}
-
-const player1 = scorePoint('Vicky')
-const player2 = scorePoint('Leo')
-
-
-player1.incrementScore()
-player1.incrementScore()
-player1.incrementScore()
-player1.incrementScore()
-player1.incrementScore()
-player1.decrementScore()
-
-player1.displayScore()
+    
+    const daveAccount = createBankAccount()
+    const wendyAccount = createBankAccount()
+    
+    // Test your code by calling the functions.
