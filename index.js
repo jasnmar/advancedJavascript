@@ -3,10 +3,10 @@
        of an array so no tags can be duplicated!
 */
 
-const postTags = []
+const postTags = new Set()
 
 function addTag(newTag) {
-    postTags.push(newTag)
+    postTags.add(newTag)
 }
 
 addTag('history')
