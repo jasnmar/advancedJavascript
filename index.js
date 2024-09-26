@@ -1,20 +1,20 @@
-let str = 'SCRIMBA'
-let newStr = ""
-
-function reverseStr(str) {
-
-    if (str.length===0) {
-        console.log(newStr)
-        return newStr
-    } else {
-        newStr += str.slice(-1)
-        reverseStr(str.slice(0,-1))
-    }
 /*
 Challenge:
-    1. Write logic for a recursive function 
-       that reverses a string.
-    🛟 hint.md for help!
+    1. Convert this to arrow functions.
 */
+
+function calculateVolume(length) {
+    return function(width) {
+        return function(height) {
+            return length * width * height
+        }
+    }
 }
-console.log(reverseStr(str))
+
+// const withLength = calculateVolume(2)
+// const withLengthAndWidth = withLength(3)
+// const volume = withLengthAndWidth(4)
+
+const volume = calculateVolume(2)(3)(4)
+
+console.log(volume)
