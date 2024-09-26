@@ -5,7 +5,6 @@ function searchEmployeeById(data, id) {
     const keys = Object.keys(data)
     if (keys.includes("id")) {
         if(data.id===id) {
-            console.log(data)
             return data
         }
     } else {
