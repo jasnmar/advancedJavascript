@@ -26,5 +26,7 @@ Stretch Goal:
 }
 
 const employee = searchEmployeeById(organizationData, 5) // pass in data and employee id.
+const employee2 = searchEmployeeById(organizationData, 6) // pass in data and employee id.
 
 console.log(employee) // Output: [{id: 5, name: "Kwame Mensah", position: "Sales Executive"}]
+console.log(employee2) // Output: [{id: 5, name: "Kwame Mensah", position: "Sales Executive"}]
