@@ -3,7 +3,7 @@ function debounce(func, delay) {
     return (...args) => {
         clearTimeout(debounceTimer)
         debounceTimer = setTimeout(()=> {
-            func.apply(this, args)
+            func(...args)
         }, delay)
     }
 /*
