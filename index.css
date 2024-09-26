@@ -1,56 +1,76 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-main {
+body {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
-  border: 1px solid #999;
-  width: 300px;
-  height: 200px;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  border-radius: 10px
+  background-color: #000000;
+  gap: 5px;
+  margin: 0;
 }
 
-.color-display {
-  width: 200px;
-  height: 50px;
-  border: 1px solid #999;
-  text-align: center;
-  margin-top: 20px;
-  border-radius: 5px;
+header {
+  padding: 1em;
 }
 
-p {
+h1 {
+  font-size: 1.4em;
   margin-bottom: 0;
 }
 
-button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-size: 1rem;
-  font-weight: 600;
+h2 {
+  font-size: .9em;
+  margin-top: 0;
+}
+
+h1, h2, li {
+  color: #be9b7b;
+  font-weight: 400;
+}
+
+ul {
+  display: flex;
+  gap: 15px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: #be9b7b;
+  text-decoration: none;
+}
+
+a:hover{
+  color: whitesmoke;
+}
+
+a:active, a:focus {
+  color: fuchsia;
+}
+
+a:visited {
+  color: #999;
+}
+
+section {
+  padding: 2em 0;
+  width: 100%;
   text-align: center;
-  color: #ffffff;
-  background-color: #1d4ed8;
-  border: 2px solid transparent;
-  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #be9b7b;
 }
 
-button:hover {
-  background-color: #2563eb;
+.hero {
+  background-image: url('/cafe.jpg');
+  min-height: 200px;
+  background-size: cover;
 }
 
-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+p {
+  margin: 0 1em;
+  text-align: left
 }
 
-button:active {
-  background-color: #1e40af;
-}
+
+
+
+
