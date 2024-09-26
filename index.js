@@ -26,16 +26,13 @@ function* fetchDataGenerator(maxSections = 10) {
     
     while (true) {
         sectionCount++
-        console.log('sectionCount: ', sectionCount)
         if (sectionCount >= maxSections) {
             console.log("Max section limit reached, stopping generator.")
             return
         }
         const fakeApiResponse = { sectionText: cafeDataArr[sectionCount] }
-        console.log('fakeApiResponse: ', fakeApiResponse)
         // Simulate an asynchronous API call with a promise
         yield new Promise(resolve => setTimeout(() => resolve(fakeApiResponse), 100))
-        //yield fakeApiResponse
     }
 }
 
@@ -43,9 +40,7 @@ const generator = fetchDataGenerator()
 
 function handleScroll() {
     const result = generator.next()
-    console.log('result: ', result.value)
     if (!result.done) {
-        console.log("working")
         result.value.then(data => {
             // Process and display the data
             const contentSection = document.createElement('section')
