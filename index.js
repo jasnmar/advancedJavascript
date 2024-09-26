@@ -23,14 +23,19 @@ import { cafeDataArr } from '/apiData.js'
 
 function* fetchDataGenerator(maxSections = 10) {
     let sectionCount = 0
+    
     while (true) {
         sectionCount++
+        console.log('sectionCount: ', sectionCount)
         if (sectionCount >= maxSections) {
             console.log("Max section limit reached, stopping generator.")
+            return
         }
         const fakeApiResponse = { sectionText: cafeDataArr[sectionCount] }
+        console.log('fakeApiResponse: ', fakeApiResponse)
         // Simulate an asynchronous API call with a promise
-        return new Promise(resolve => setTimeout(() => resolve(fakeApiResponse), 100))
+        yield new Promise(resolve => setTimeout(() => resolve(fakeApiResponse), 100))
+        //yield fakeApiResponse
     }
 }
 
@@ -38,7 +43,9 @@ const generator = fetchDataGenerator()
 
 function handleScroll() {
     const result = generator.next()
-    if (!result) {
+    console.log('result: ', result.value)
+    if (!result.done) {
+        console.log("working")
         result.value.then(data => {
             // Process and display the data
             const contentSection = document.createElement('section')
@@ -58,10 +65,11 @@ function handleScroll() {
 }
 
 // Debouncing function
-function debounce(func, timeout) {
+function debounce(func, timeout=100) {
+    let debounceTimer
     return function () {
-        clearTimeout()
-        setTimeout(() => {
+        clearTimeout(debounceTimer)
+        debounceTimer = setTimeout(() => {
             func()
         }, timeout)
     }
