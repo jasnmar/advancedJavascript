@@ -1,18 +1,25 @@
-function handleResize(e){
-    console.log('resize happened on event: ' + e)
-}
-
-
-function throttle(func, delay) {
-    let throttleTimeout = null
+function debounce(func, delay) {
     return (...args) => {
-        if (!throttleTimeout) {
+        setTimeout(() => {
             func(...args)
-            throttleTimeout = setTimeout(() => {
-                throttleTimeout = null
-            }, delay)
-        }
+        }, delay);
     }
-}
-const throttleHandleResize = throttle(handleResize, 500)
-window.addEventListener('resize', throttleHandleResize)
+    /*
+    Challenge:
+        1. Write logic inside this function to make 
+           handleInput fire only when there has been no 
+           activity in the input field for ‘delay’ seconds. 
+           handleInput should NOT run when the first event 
+           is detected.
+           🛟 hint.md for help!
+    */
+    }
+     
+    function handleInput(e) {
+        console.log('Input detected from element with id ' + e.target.id)
+    }
+    
+    document.getElementById('name-input').addEventListener('input', debounce(handleInput, 1000))
+    //document.getElementById('name-input').addEventListener('input', handleInput)
+    
+    
