@@ -1,37 +1,71 @@
 /*
+When the page loads, this site should display the
+'header', 'hero', and 'nav' sections only.
+
+As a user scrolls, more content should be added.
+There are ten content sections in total, which are
+loading from apiData.js
+
+The handleScroll function should be debounced to
+limit the number of times a scroll event triggers it.
+
+If no debounce time is passed in, it should default
+to 100 milliseconds.
+ 
+At the moment, the code is broken.
+
 Challenge:
-    1. Create a generator that yields a random hex code on demand.
-    - You might need to research how you can do something infinitely 
-      inside a generator.
-    - See if you can work out how to generate a random hex code.
-    🛟 hint.md for help
+1. Identify and fix the bugs in this code.
 */
-function* generator() {
-    for (let i = 0; i < Infinity; i++) {
-        const redVal1 = parseInt(Math.random()*16).toString(16)
-        const redVal2 = parseInt(Math.random()*16).toString(16)
-        const greVal1 = parseInt(Math.random()*16).toString(16)
-        const greVal2 = parseInt(Math.random()*16).toString(16)
-        const bluVal1 = parseInt(Math.random()*16).toString(16)
-        const bluVal2 = parseInt(Math.random()*16).toString(16)
-        
-        const rgb = redVal1 + redVal2 + greVal1 + greVal2 + bluVal1 + bluVal2
-        console.log('rgb: ', rgb)
-        yield rgb
+
+
+import { cafeDataArr } from '/apiData.js'
+
+function* fetchDataGenerator(maxSections = 10) {
+    let sectionCount = 0
+    while (true) {
+        sectionCount++
+        if (sectionCount >= maxSections) {
+            console.log("Max section limit reached, stopping generator.")
+        }
+        const fakeApiResponse = { sectionText: cafeDataArr[sectionCount] }
+        // Simulate an asynchronous API call with a promise
+        return new Promise(resolve => setTimeout(() => resolve(fakeApiResponse), 100))
     }
-    
 }
 
-const colorGen = generator()
-document.getElementById('nextColorButton').addEventListener('click', () => {
-    
-    const color = colorGen.next().value
-    /*
-    Challenge:
-        2. When the "Next Color" button is clicked, update 
-           the textContent and backgroundColor attributes below.
-    */
-            document.getElementById('colorText').textContent = color
-            document.getElementById('colorDisplay').style.backgroundColor = "#"+color
-    })
-    
+const generator = fetchDataGenerator()
+
+function handleScroll() {
+    const result = generator.next()
+    if (!result) {
+        result.value.then(data => {
+            // Process and display the data
+            const contentSection = document.createElement('section')
+            const sectionHeader = document.createElement('h3')
+            const sectionTeaser = document.createElement('p')
+            sectionHeader.innerText = data.sectionText.heading
+            sectionTeaser.innerText = data.sectionText.teaser
+            contentSection.appendChild(sectionHeader)
+            contentSection.appendChild(sectionTeaser)
+            document.body.appendChild(contentSection)
+        }).catch(error => {
+            console.error('Failed to load section:', error)
+        })
+    } else {
+        console.log('No more sections to load.')
+    }
+}
+
+// Debouncing function
+function debounce(func, timeout) {
+    return function () {
+        clearTimeout()
+        setTimeout(() => {
+            func()
+        }, timeout)
+    }
+}
+
+// Attach debounced handler to scroll event
+document.addEventListener('scroll', debounce(handleScroll))
