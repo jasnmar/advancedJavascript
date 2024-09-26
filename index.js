@@ -3,13 +3,7 @@ Challenge:
     1. Convert this to arrow functions.
 */
 
-function calculateVolume(length) {
-    return function(width) {
-        return function(height) {
-            return length * width * height
-        }
-    }
-}
+const calculateVolume = (length) => (width) => (height) => length * width * height
 
 // const withLength = calculateVolume(2)
 // const withLengthAndWidth = withLength(3)
