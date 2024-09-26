@@ -5,13 +5,13 @@ function handleResize(e){
 
 function throttle(func, delay) {
     let throttleTimeout = null
-    return function(e) {
-        if(!throttleTimeout) {
-            func(e)
+    return (...args) => {
+        if (!throttleTimeout) {
+            func(...args)
             throttleTimeout = setTimeout(() => {
                 throttleTimeout = null
             }, delay)
-        } 
+        }
     }
 }
 const throttleHandleResize = throttle(handleResize, 500)
